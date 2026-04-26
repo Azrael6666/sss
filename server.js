@@ -282,6 +282,20 @@ app.get('/rules', (req, res) => {
                 </ul>
             </div>
         </div>
+        <div id="robbery-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('robbery-modal')">&times;</span>
+                <h2>أعداد السرقات المسموحة</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>1. المستشفيات ومراكز الشرط ومراكز امن المنشأت.</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>2. معرض المركبات والشاحنات..</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>3. مركز التوظيف ومكان استخراج رخص.</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>4. حجز المركبات والشاحنات.</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>5. مناطق العمل (الاخشاب - الدواجن - الاعناب الخ...).</div>
+
+                </div>
+            </div>
+        </div>
 
         <div id="certified-modal" class="modal">
             <div class="modal-content">
