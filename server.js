@@ -21,42 +21,41 @@ const STYLES = `
     }
     .nav-links a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 15px; transition: 0.3s; }
     .nav-links a:hover { color: #d4af37; }
-    .logo { font-size: 24px; font-weight: bold; color: #d4af37; text-decoration: none; }
+    .logo { font-size: 26px; font-weight: bold; color: #d4af37; text-decoration: none; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
 
-    .content-area { padding: 60px 8%; text-align: center; }
-    .hero { height: 45vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-    .hero h1 { font-size: 48px; margin-bottom: 10px; color: #d4af37; text-shadow: 0 0 20px rgba(212,175,55,0.3); }
+    .content-area { padding: 40px 8%; text-align: center; }
+    
+    /* الهيرو مع الزرين */
+    .hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .hero h1 { font-size: 60px; margin-bottom: 15px; color: #d4af37; text-shadow: 0 0 30px rgba(212,175,55,0.4); }
+    .hero p { font-size: 20px; margin-bottom: 30px; color: #eee; }
+    
+    .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    
+    /* أزرار الهيرو */
+    .btn-main {
+        padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; 
+        font-size: 18px; transition: 0.3s; min-width: 220px; text-align: center;
+    }
+    .btn-discord { background: #5865F2; color: #fff; border: 2px solid #5865F2; }
+    .btn-discord:hover { background: transparent; transform: translateY(-5px); box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4); }
+    
+    .btn-cfx-main { background: #d4af37; color: #000; border: 2px solid #d4af37; }
+    .btn-cfx-main:hover { background: transparent; color: #d4af37; transform: translateY(-5px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
+
+    /* بقية التنسيقات */
+    .about-box {
+        background: rgba(20, 20, 20, 0.85); border: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 40px; border-radius: 15px; margin: 40px auto; max-width: 900px;
+    }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
     .card {
-        background: rgba(20, 20, 20, 0.85); border: 1px solid rgba(212, 175, 55, 0.15);
+        background: rgba(25, 25, 25, 0.85); border: 1px solid rgba(255, 255, 255, 0.05);
         padding: 35px; border-radius: 15px; transition: 0.3s;
     }
-    .card:hover { border-color: #d4af37; transform: translateY(-10px); background: rgba(30, 30, 30, 0.95); }
+    .card:hover { border-color: #d4af37; transform: translateY(-10px); }
     .card i { font-size: 45px; color: #d4af37; margin-bottom: 20px; display: block; }
-
-    /* أزرار سبارك الفول */
-    .btn-gold {
-        background: #d4af37; color: #000; padding: 14px 40px; border-radius: 8px;
-        text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; cursor: pointer;
-    }
-    .btn-gold:hover { background: #fff; transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); }
-
-    .btn-cfx {
-        background: linear-gradient(90deg, #d4af37, #b8860b); color: #000; padding: 18px 50px; 
-        border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 20px;
-        transition: 0.3s; display: inline-block; border: none; box-shadow: 0 5px 15px rgba(212,175,55,0.4);
-    }
-    .btn-cfx:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(212,175,55,0.6); filter: brightness(1.1); }
-
-    /* قسم انضم الآن CFX */
-    .join-section {
-        background: rgba(0, 0, 0, 0.8); border: 2px solid #d4af37;
-        padding: 60px 20px; border-radius: 20px; margin: 60px auto; max-width: 1000px;
-        box-shadow: 0 0 30px rgba(212,175,55,0.1);
-    }
-    .join-section h2 { font-size: 38px; color: #fff; margin-bottom: 15px; }
-    .join-section span { color: #d4af37; }
 
     footer { padding: 40px; text-align: center; background: rgba(10,10,10,0.95); border-top: 1px solid #222; color: #777; }
 </style>
@@ -68,7 +67,7 @@ const layout = (content) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مقاطعة سبارك | الرول بلاي العربي</title>
+    <title>مقاطعة سبارك</title>
     ${STYLES}
 </head>
 <body>
@@ -83,15 +82,6 @@ const layout = (content) => `
     </nav>
     <div class="content-area">
         ${content}
-        
-        <section class="join-section">
-            <h2>انضم الآن إلى <span>مقاطعة سبارك</span></h2>
-            <p style="color: #ccc; margin-bottom: 35px; font-size: 18px;">اضغط على الزر أدناه ليتم توجيهك مباشرة لداخل المدينة عبر FiveM</p>
-            <a href="fivem://connect/cfx.re/join/p9bd35" class="btn-cfx">تشغيل اللعبة ودخول المدينة</a>
-            <div style="margin-top: 20px;">
-                <a href="https://discord.gg/sp10" style="color: #d4af37; text-decoration: none; font-weight: bold;">أو انضم لمجتمعنا على الديسكورد</a>
-            </div>
-        </section>
     </div>
     <footer>جميع الحقوق محفوظة لمقاطعة سبارك &copy; 2026</footer>
 </body>
@@ -102,26 +92,30 @@ app.get('/', (req, res) => {
     res.send(layout(`
         <section class="hero">
             <h1>مقاطعة سبارك</h1>
-            <p>حيث تبدأ قصتك الواقعية الأكثر إثارة</p>
+            <p>انطلق في رحلة واقعية لا تنتهي داخل عالم FiveM</p>
+            <div class="hero-btns">
+                <a href="https://discord.gg/sp10" class="btn-main btn-discord" target="_blank">انضم إلى الديسكورد</a>
+                <a href="fivem://connect/cfx.re/join/p9bd35" class="btn-main btn-cfx-main">الدخول إلى المقاطعة</a>
+            </div>
         </section>
         
-        <div style="background: rgba(20,20,20,0.8); padding: 40px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2); max-width: 900px; margin: 0 auto;">
-            <h2 style="color: #d4af37;">من نحن</h2>
-            <p style="line-height: 1.9; font-size: 18px; color: #eee;">نحن في مقاطعة سبارك نقدم بيئة رول بلاي احترافية تعتمد على الواقعية الكاملة، مع أنظمة برمجية حصرية وإدارة تسهر على راحتكم لضمان أفضل تجربة لعب.</p>
-        </div>
+        <section class="about-box">
+            <h2 style="color: #d4af37;">عن مقاطعة سبارك</h2>
+            <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
+        </section>
 
-        <h2 style="margin-top: 80px; font-size: 32px;">لماذا تختار سبارك؟</h2>
+        <h2 style="margin-top: 60px;">مميزاتنا</h2>
         <div class="grid">
-            <div class="card"><i>🛡️</i><h3>بيئة آمنة</h3><p>قوانين صارمة ورقابة إدارية لضمان جودة التمثيل والعدالة.</p></div>
-            <div class="card"><i>🏎️</i><h3>سيارات حصرية</h3><p>أسطول من السيارات الواقعية والمعدلة خصيصاً لسكان المدينة.</p></div>
-            <div class="card"><i>🏙️</i><h3>أنظمة فريدة</h3><p>سكربتات حصرية ومميزات تجعل من حياتك الافتراضية متعة حقيقية.</p></div>
+            <div class="card"><i>🛡️</i><h3>حماية شاملة</h3><p>نظام أمان متقدم يضمن تجربة عادلة للجميع.</p></div>
+            <div class="card"><i>💼</i><h3>وظائف حقيقية</h3><p>تنوع كبير في الوظائف الحكومية والخاصة.</p></div>
+            <div class="card"><i>🚗</i><h3>مركبات حصرية</h3><p>سيارات واقعية بلمسات سبارك الخاصة.</p></div>
         </div>
     `));
 });
 
-// صفحات الوظائف والمتجر والقوانين
-app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color: #d4af37;">الوظائف المتاحة</h1><div class="grid"><div class="card"><i>🚔</i><h3>الشرطة</h3><p>حماية أمن سبارك.</p></div><div class="card"><i>🚑</i><h3>الإسعاف</h3><p>إنقاذ الأرواح.</p></div><div class="card"><i>🔧</i><h3>الميكانيك</h3><p>تعديل المركبات.</p></div></div>`)));
-app.get('/store', (req, res) => res.send(layout(`<h1 style="color: #d4af37;">متجر سبارك</h1><div class="grid"><div class="card"><i>💎</i><h3>عضويات VIP</h3><p>مميزات رهيبة.</p></div><div class="card"><i>🚗</i><h3>سيارات خاصة</h3><p>مركبات فريدة.</p></div></div>`)));
-app.get('/rules', (req, res) => res.send(layout(`<h1 style="color: #d4af37;">القوانين</h1><div class="card" style="max-width: 700px; margin: 20px auto; text-align: right;"><p>• الاحترام المتبادل.</p><p>• الالتزام بالرول بلاي.</p><p>• منع الغش تماماً.</p></div>`)));
+// المسارات الإضافية
+app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">الوظائف المتاحة</h1><div class="grid"><div class="card"><i>🚔</i><h3>الشرطة</h3></div><div class="card"><i>🚑</i><h3>الإسعاف</h3></div><div class="card"><i>🛠️</i><h3>الميكانيك</h3></div></div>`)));
+app.get('/store', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">متجر سبارك</h1><div class="grid"><div class="card"><i>💎</i><h3>VIP</h3></div><div class="card"><i>🚗</i><h3>سيارات</h3></div></div>`)));
+app.get('/rules', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">القوانين</h1><div class="about-box"><p>الرجاء الالتزام بالرول بلاي الكامل.</p></div>`)));
 
-app.listen(3000, () => console.log('Spark Web is LIVE on CFX Mode!'));
+app.listen(3000, () => console.log('Spark Web Updated!'));
