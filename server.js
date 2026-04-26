@@ -117,7 +117,7 @@ app.get('/', (req, res) => {
         </section>
 
         <div style="background: rgba(20,20,20,0.8); padding: 40px; border-radius: 15px; max-width: 900px; margin: 40px auto; border: 1px solid rgba(212,175,55,0.2);">
-            <h2 style="color: #d4af37;">نبذة عن مقاطعة سبارك</h2>
+            <h2 style="color: #d4af37;">عن مقاطعة سبارك</h2>
             <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
         </div>
     `));
@@ -126,7 +126,7 @@ app.get('/', (req, res) => {
 // القوانين
 app.get('/rules', (req, res) => {
     res.send(layout(`
-        <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">قوانين مقاطعة سبارك</h1>
+        <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">دستور وقوانين مقاطعة سبارك</h1>
         <p style="color: #aaa; margin-bottom: 40px;">ملاحظة: هذه القوانين قابلة للتحديث والزيادة في اي وقت والجهل بالقوانين لا يعفيك من العقوبة.</p>
         
         <div class="cards-container">
@@ -201,8 +201,8 @@ app.get('/rules', (req, res) => {
                     <li>1. اسم الهوية يجب أن يكون واقعياً (أول وثاني) وباللغة العربية أو الانجليزية.</li>
                     <li>2. يمنع طلب المطاردة أو الترصد للعساكر بدون سبب مقنع.</li>
                     <li>3. التواصل داخل المنطقة عبر موجة الراديو فقط، ويمنع استخدام الديسكورد للتواصل أثناء اللعب (MetaGaming).</li>
-                    <li>4. يمنع السب والقذف والشتم بجميع أنواعه .</li>
-                    <li>5. يمنع استعمال الراديو في حال تقييد اليدين أو الغوص تحت الماء.</li>
+                    <li>4. يمنع السب والقذف والشتم بجميع أنواعه (أووك أو إن كاركتر).</li>
+                    <li>5. يمنع الراديو في حال تقييد اليدين أو الغوص تحت الماء.</li>
                     <li>6. يمنع سرقة مركبات الوظائف المعتمدة (إسعاف، شرطة، ميكانيك).</li>
                     <li>7. الالتزام بالتمثيل الواقعي والاحترافي شرط أساسي للاستمرار في المقاطعة.</li>
                     <li>8. يمنع إطلاق النار بوجود الهلال الأحمر في الموقع.</li>
@@ -296,14 +296,17 @@ app.get('/creators', (req, res) => {
         <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 40px;">صناع المحتوى</h1>
         <div class="rule-card" onclick="openModal('creators-modal')" style="margin: auto;">
             <div class="icon-box" style="background-color: #e91e63;"><i class="fa-solid fa-video"></i></div>
-            <div><h3>جار العمل</h3><p>sp10</p></div>
+            <div><h3>قوانين البث وصناعة المحتوى</h3><p>الامتيازات والضوابط</p></div>
         </div>
         <div id="creators-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('creators-modal')">&times;</span>
                 <h2>قوانين صناع المحتوى</h2>
                 <ul class="rules-list">
-                    <li>1. جار العمل
+                    <li>1. يجب كتابة (مقاطعة سبارك) في عنوان البث بوضوح.</li>
+                    <li>2. يمنع منعاً باتاً الإساءة للإدارة أو انتقاد القوانين أثناء البث (يوجد تذكرة للشكاوى).</li>
+                    <li>3. يمنع استغلال الـ "كاميرا" لكشف أماكن اللاعبين أو الهروب من السيناريو.</li>
+                    <li>4. الالتزام بالأدب العام وعدم التلفظ بكلمات غير لائقة أمام المشاهدين.</li>
                 </ul>
             </div>
         </div>
