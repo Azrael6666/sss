@@ -92,7 +92,7 @@ app.get('/', (req, res) => {
     res.send(layout(`
         <section class="hero">
             <h1>مقاطعة سبارك</h1>
-            <p>انطلق في رحلة واقعية لا تنتهي داخل عالم FiveM</p>
+            <p>انطلق في رحلة واقعية لا تنتهي داخل عالمنا  </p>
             <div class="hero-btns">
                 <a href="https://discord.gg/sp10" class="btn-main btn-discord" target="_blank">انضم إلى الديسكورد</a>
                 <a href="fivem://connect/cfx.re/join/p9bd35" class="btn-main btn-cfx-main">الدخول إلى المقاطعة</a>
@@ -114,8 +114,8 @@ app.get('/', (req, res) => {
 });
 
 // المسارات الإضافية
-app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">الوظائف المتاحة</h1><div class="grid"><div class="card"><i>🚔</i><h3>الشرطة</h3></div><div class="card"><i>🚑</i><h3>الإسعاف</h3></div><div class="card"><i>🛠️</i><h3>الميكانيك</h3></div></div>`)));
-app.get('/store', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">متجر سبارك</h1><div class="grid"><div class="card"><i>💎</i><h3>VIP</h3></div><div class="card"><i>🚗</i><h3>سيارات</h3></div></div>`)));
-app.get('/rules', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">القوانين</h1><div class="about-box"><p>الرجاء الالتزام بالرول بلاي الكامل.</p></div>`)));
+app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">الوضائف المتاحة</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
+app.get('/store', (req, res) =>res.send(layout(`<h1 style="color:#d4af37;">متجر مقاطعة سبارك</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
+app.get('/rules', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">القوانين</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
 
 app.listen(3000, () => console.log('Spark Web Updated!'));
