@@ -477,5 +477,4 @@ app.get('/creators', (req, res) => {
 
 app.get('/jobs', (req, res) => res.send(layout(`<h1>الوظائف</h1><p>قريباً...</p>`)));
 app.get('/store', (req, res) => res.send(layout(`<h1>المتجر</h1><p>قريباً...</p>`)));
-
-app.listen(3000, () => console.log('Spark Web Live on port 3000'));
+module.exports = app;
