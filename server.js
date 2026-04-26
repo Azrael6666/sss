@@ -83,7 +83,7 @@ const layout = (content) => `
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="logo">مقاطعة ريج</a>
+        <a href="/" class="logo">مقاطعة سبارك </a>
         <div class="nav-links">
             <a href="/">الرئيسية</a>
             <a href="/rules">القوانين</a>
@@ -100,7 +100,7 @@ const layout = (content) => `
 app.get('/', (req, res) => {
     const home = `
     <section class="hero">
-        <h1>مرحباً بك في مقاطعةسبارك </h1>
+        <h1>مرحباً بك في مقاطعة سبارك </h1>
         <p>عالم من الواقعية والاحترافية بانتظارك</p>
         <a href="https://discord.gg/sp10" class="btn-gold">انضم الآن عبر Discord</a>
     </section>
