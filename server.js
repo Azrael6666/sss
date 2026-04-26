@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const TEMPLATE_CSS = `
+const STYLES = `
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     
@@ -9,141 +9,131 @@ const TEMPLATE_CSS = `
     body { 
         margin: 0; padding: 0; font-family: 'Cairo', sans-serif; color: #fff; direction: rtl; 
         background-color: #0b0b0b; overflow-x: hidden;
+        /* الخلفية الخاصة بك مع تثبيت وتعتيم احترافي */
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
+                    url('https://cdn.discordapp.com/attachments/1478519443968753695/1478522145469370570/fca6a48587bf24ac.png?ex=69ee940d&is=69ed428d&hm=2011367125827fa11fa218fce0611a2626d1676fb461a6d241c4f54fae62e715&');
+        background-size: cover; background-position: center; background-attachment: fixed;
     }
 
-    /* الهيدر والملاحة (القائمة الرئيسية) */
+    /* الهيدر */
     .navbar { 
         display: flex; justify-content: space-between; align-items: center;
-        padding: 20px 8%; position: absolute; width: 100%; z-index: 1000;
-        background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
+        padding: 15px 8%; position: sticky; top: 0; width: 100%; z-index: 1000;
+        background: rgba(10,10,10,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     }
-    .nav-links a { 
-        color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 15px; transition: 0.3s;
-    }
+    .nav-links a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 15px; transition: 0.3s; }
     .nav-links a:hover { color: #d4af37; }
-    .logo { 
-        font-size: 24px; font-weight: bold; color: #d4af37; 
-        display: flex; align-items: center; gap: 10px; text-decoration: none;
-    }
+    .logo { font-size: 24px; font-weight: bold; color: #d4af37; text-decoration: none; }
 
-    /* القسم الرئيسي (Hero Section) */
     .hero {
-        height: 100vh;
-        /* استخدام صورة سيارة مناسبة كخلفية */
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
-                    url('https://images.wallpaperscraft.com/image/single/chevrolet_camaro_front_view_156230_1920x1080.jpg');
-        background-size: cover; background-position: center;
-        display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-        padding: 0 20px;
+        height: 60vh; display: flex; flex-direction: column; justify-content: center; 
+        align-items: center; text-align: center; padding: 0 20px;
     }
-    .hero h1 { font-size: 50px; margin-bottom: 10px; color: #fff; }
-    .hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 700px; margin-bottom: 30px; }
+    .hero h1 { font-size: 48px; margin-bottom: 10px; color: #d4af37; }
+
+    /* قسم النبذة */
+    .about-box {
+        background: rgba(20, 20, 20, 0.8); border: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 40px; border-radius: 15px; margin: -50px auto 50px; max-width: 900px; text-align: center;
+    }
+    .about-box h2 { color: #d4af37; margin-bottom: 15px; font-size: 28px; }
+    .about-box p { line-height: 1.8; color: #ccc; font-size: 17px; }
+
+    /* قسم تجربتنا */
+    .experience-section { padding: 50px 8%; text-align: center; }
+    .experience-section h2 { font-size: 30px; margin-bottom: 40px; color: #fff; position: relative; }
+    .experience-section h2::after { content: ""; display: block; width: 60px; height: 3px; background: #d4af37; margin: 10px auto; }
     
-    .btn-discord {
-        background: #d4af37; color: #000; padding: 12px 40px; border-radius: 5px;
-        text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s;
-        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .card {
+        background: rgba(25, 25, 25, 0.7); border: 1px solid rgba(255,255,255,0.05);
+        padding: 30px; border-radius: 12px; transition: 0.3s;
     }
-    .btn-discord:hover { background: #fff; transform: translateY(-3px); }
+    .card:hover { border-color: #d4af37; transform: translateY(-5px); }
+    .card i { font-size: 35px; color: #d4af37; margin-bottom: 15px; display: block; }
+    .card h3 { font-size: 20px; margin-bottom: 10px; }
+    .card p { font-size: 14px; color: #aaa; }
 
-    /* قسم المميزات (التجربة الفريدة) */
-    .features-section { padding: 80px 8%; text-align: center; background: #0d0d0d; }
-    .features-section h2 { font-size: 32px; margin-bottom: 40px; color: #d4af37; }
-    .features-grid { 
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; 
+    /* أزرار الأكشن */
+    .btn-gold {
+        background: #d4af37; color: #000; padding: 12px 35px; border-radius: 5px;
+        text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block;
     }
-    .f-card {
-        background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.1);
-        padding: 40px; border-radius: 10px; transition: 0.3s; text-align: center;
-    }
-    .f-card:hover { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); transform: translateY(-10px); }
-    .f-card i { font-size: 40px; color: #d4af37; margin-bottom: 20px; display: block; }
-    .f-card h3 { margin-bottom: 15px; font-size: 22px; color: #fff; }
-    .f-card p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; }
+    .btn-gold:hover { background: #fff; transform: scale(1.05); }
 
-    footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: #555; font-size: 14px; background: #0d0d0d; }
+    .btn-outline {
+        border: 2px solid #d4af37; color: #d4af37; padding: 10px 30px; border-radius: 5px;
+        text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block;
+        margin-top: 20px;
+    }
+    .btn-outline:hover { background: #d4af37; color: #000; }
+
+    footer { padding: 30px; text-align: center; background: rgba(10,10,10,0.9); border-top: 1px solid #222; color: #666; font-size: 13px; }
 </style>
 `;
 
-const renderLayout = (content) => `
+const layout = (content) => `
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مقاطعة ريج - رول بلاي</title>
-    ${TEMPLATE_CSS}
+    <title>مقاطعة ريج</title>
+    ${STYLES}
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="logo">
-            <img src="https://example.com/your-logo.png" width="40" alt="" onerror="this.style.display='none'"> 
-            مقاطعة ريج
-        </a>
+        <a href="/" class="logo">مقاطعة ريج</a>
         <div class="nav-links">
             <a href="/">الرئيسية</a>
-            <a href="/safe">القوانين</a>
-            <a href="/trusted">الوظائف</a>
-            <a href="/chat">الإعلام</a>
+            <a href="/rules">القوانين</a>
+            <a href="#">الوظائف</a>
             <a href="#">متجر ريج</a>
         </div>
     </nav>
-
     ${content}
-
     <footer>جميع الحقوق محفوظة لمقاطعة ريج &copy; 2026</footer>
 </body>
 </html>
 `;
 
-// الصفحة الرئيسية (القائمة الرئيسية)
 app.get('/', (req, res) => {
-    const homeContent = `
+    const home = `
     <section class="hero">
-        <h1>مرحباً بك في رول بلاي مقاطعة ريج</h1>
-        <p>انضم إلى مجتمعنا واستمتع بتجربة واقعية فريدة في مدينة افتراضية متكاملة الخدمات والأنظمة.</p>
-        <a href="https://discord.gg/yourserver" class="btn-discord" target="_blank">انضم الآن عبر Discord</a>
+        <h1>مرحباً بك في مقاطعة ريج</h1>
+        <p>عالم من الواقعية والاحترافية بانتظارك</p>
+        <a href="https://discord.gg/sp10" class="btn-gold">انضم الآن عبر Discord</a>
     </section>
 
-    <section id="features" class="features-section">
-        <p style="color: #d4af37; font-weight: bold; margin-bottom: 10px;">نحن نوفر لك أفضل تجربة</p>
+    <section class="about-box">
+        <h2>من نحن</h2>
+        <p>نحن مجتمع رول بلاي متكامل يسعى لتقديم أفضل تجربة واقعية للاعب العربي. نتميز بأنظمة برمجية فريدة، إدارة عادلة، وبيئة لعب نظيفة تضمن لك الاستمتاع بكل لحظة تقضيها داخل المدينة.</p>
+    </section>
+
+    <section class="experience-section">
         <h2>تجربتنا الفريدة</h2>
-        <div class="features-grid">
-            <div class="f-card">
-                <i>👤</i> <h3>مجتمع نشط</h3>
-                <p>انضم إلى مجتمع عربي متفاعل، كون صداقات جديدة وابدأ قصتك الخاصة.</p>
-            </div>
-            <div class="f-card">
-                <i>🛡️</i> <h3>نظام أمني متطور</h3>
-                <p>قوانين واضحة وإدارة فاعلة تضمن لك بيئة لعب عادلة وممتعة للجميع.</p>
-            </div>
-            <div class="f-card">
-                <i>💼</i> <h3>وظائف متنوعة</h3>
-                <p>اختر من بين وظائف حكومية وخاصة، من الشرطة والإسعاف إلى الميكانيك والتجارة.</p>
-            </div>
-            <div class="f-card">
-                <i>📡</i> <h3>تجربة واقعية</h3>
-                <p>استمتع بتجربة رول بلاي احترافية مبنية على أعلى المعايير الواقعية.</p>
-            </div>
+        <div class="grid">
+            <div class="card"><i>🛡️</i><h3>نظام أمني</h3><p>حماية متكاملة وقوانين صارمة لضمان جودة التمثيل.</p></div>
+            <div class="card"><i>💼</i><h3>وظائف متنوعة</h3><p>أكثر من 20 وظيفة مختلفة بانتظارك لتبدأ مسيرتك.</p></div>
+            <div class="card"><i>🤝</i><h3>مجتمع متفاعل</h3><p>الاف اللاعبين النشطين يومياً لخلق قصص لا تنسى.</p></div>
+            <div class="card"><i>🚀</i><h3>تحديثات مستمرة</h3><p>نعمل دائماً على إضافة ميزات جديدة وحصرية للمدينة.</p></div>
         </div>
+        
+        <a href="/rules" class="btn-outline">اطلع على القوانين</a>
     </section>
     `;
-    res.send(renderLayout(homeContent));
+    res.send(layout(home));
 });
 
-// المسارات الأخرى (يمكنك حذفها إذا لم تكن بحاجة إليها الآن)
-app.get('/safe', (req, res) => {
-    const safeContent = `<div style="padding: 150px; text-align: center;"><h1>القوانين</h1><p>سيتم عرض القوانين هنا قريباً.</p></div>`;
-    res.send(renderLayout(safeContent));
-});
-app.get('/trusted', (req, res) => {
-    const trustedContent = `<div style="padding: 150px; text-align: center;"><h1>الوظائف</h1><p>سيتم عرض قائمة الوظائف هنا قريباً.</p></div>`;
-    res.send(renderLayout(trustedContent));
-});
-app.get('/chat', (req, res) => {
-    const chatContent = `<div style="padding: 150px; text-align: center;"><h1>الإعلام</h1><p>سيتم عرض أخبار الإعلام هنا قريباً.</p></div>`;
-    res.send(renderPage(chatContent));
+app.get('/rules', (req, res) => {
+    const rules = `
+    <div style="padding: 100px 8%; text-align: center;">
+        <h1 style="color: #d4af37;">قوانين مقاطعة ريج</h1>
+        <p>هنا سيتم عرض كافة القوانين والأنظمة المعمول بها.</p>
+        <a href="/" style="color: #d4af37; text-decoration: none;">&larr; العودة للرئيسية</a>
+    </div>
+    `;
+    res.send(layout(rules));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => { console.log('SparkWeb Live! SparkWeb Live!'); });
+app.listen(3000, () => console.log('Rage Web is Running!'));
