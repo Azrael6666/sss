@@ -56,6 +56,30 @@ const STYLES = `
     .card h3 { color: #fff; margin-bottom: 12px; }
     .card p { color: #ccc; font-size: 15px; line-height: 1.6; }
 
+    /* تنسيقات زر وقائمة القوانين */
+    .rules-container { text-align: right; }
+    .toggle-btn {
+        background: #1a1a1a; color: #d4af37; border: 1px solid #d4af37;
+        padding: 15px 25px; font-size: 18px; font-weight: bold; border-radius: 8px; 
+        cursor: pointer; width: 100%; text-align: right; display: flex; 
+        justify-content: space-between; align-items: center; font-family: 'Cairo', sans-serif;
+        transition: 0.3s; margin-bottom: 15px;
+    }
+    .toggle-btn:hover { background: #d4af37; color: #000; }
+    
+    .rules-content {
+        display: none; background: rgba(0, 0, 0, 0.5); padding: 25px; 
+        border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); 
+        margin-bottom: 20px; text-align: right; line-height: 1.8;
+    }
+    .rules-content h3 { color: #d4af37; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 25px; }
+    .rules-content p.def { font-size: 17px; background: rgba(212,175,55,0.1); padding: 15px; border-right: 4px solid #d4af37; border-radius: 5px; }
+    .rules-list { list-style: none; padding: 0; }
+    .rules-list li { background: rgba(255,255,255,0.03); margin: 8px 0; padding: 12px 15px; border-radius: 5px; border-right: 3px solid #555; transition: 0.2s; }
+    .rules-list li:hover { border-right-color: #d4af37; background: rgba(255,255,255,0.06); }
+    .rank-box { background: rgba(25,25,25,0.8); border: 1px solid #333; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    .rank-box h4 { color: #d4af37; margin-top: 0; font-size: 18px; }
+
     footer { padding: 40px; text-align: center; background: rgba(10,10,10,0.95); border-top: 1px solid #222; color: #777; }
 </style>
 `;
@@ -68,6 +92,16 @@ const layout = (content) => `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مقاطعة سبارك</title>
     ${STYLES}
+    <script>
+        function toggleRules(id) {
+            var el = document.getElementById(id);
+            if (el.style.display === "block") {
+                el.style.display = "none";
+            } else {
+                el.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -124,9 +158,88 @@ app.get('/', (req, res) => {
     `));
 });
 
-// المسارات الإضافية (بدون تغيير)
-app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">الوظائف المتاحة</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
-app.get('/store', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">متجر مقاطعة سبارك</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
-app.get('/rules', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">القوانين</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
+app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">الوظائف المتاحة</h1><div class="about-box"><p>جار العمل على وظائف مقاطعة سبارك .</p></div>`)));
+app.get('/store', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">متجر مقاطعة سبارك</h1><div class="about-box"><p>جار العمل على متجر مقاطعة سبارك .</p></div>`)));
+
+// مسار القوانين الجديد المحدث
+app.get('/rules', (req, res) => {
+    res.send(layout(`
+        <h1 style="color:#d4af37;">القوانين والأنظمة</h1>
+        
+        <div class="about-box rules-container">
+            <button class="toggle-btn" onclick="toggleRules('certified-player')">
+                <span>قوانين لاعب معتمد</span>
+                <span>▼</span>
+            </button>
+            
+            <div id="certified-player" class="rules-content">
+                <p class="def"><strong>اللاعب المعتمد:</strong> هو لاعب يحق له الانتداب في أكثر من وظيفة لسد العجز في الوظيفة المنتدب إليها مع الحفاظ على الرتب والترقيات الخاصة بكل وظيفة والتغيير بين الوظائف بشكل دوري ومستمر.</p>
+                
+                <h3>القوانين العامة للاعب المعتمد</h3>
+                <ul class="rules-list">
+                    <li>1. حسن السمعة ولبق في تعاملك وأسلوبك مع اللاعبين.</li>
+                    <li>2. التقديم على وظيفتين معتمدة على الأقل والتغيير بينهم بشكل دوري والحرص على تطوير نفسك ومساندة زملائك في الوظيفة سواء كانت أساسية أو انتداب.</li>
+                    <li>3. مساعدة اللاعبين في الديسكورد بشكل عام.</li>
+                    <li>4. التمثيل بشكل جيد والالتزام في التمثيل الخاص في المدينة.</li>
+                    <li>5. مساندة الوظائف المعتمدة الأخرى عند الضرورة.</li>
+                </ul>
+
+                <h3>🟢 شروط القبول في اللاعب المعتمد 🟢</h3>
+                <ul class="rules-list">
+                    <li>1. عدم وجود مخالفات رقابية في أخر 30 يوم.</li>
+                    <li>2. أن يكون المتقدم متفرغ لمهام اللاعب المعتمد بشكل عام.</li>
+                    <li>3. يجب على المتقدم أن يتواجد في وظيفة معتمدة.</li>
+                    <li>4. في حال تم إعفاؤك من مهام اللاعب المعتمد يمنع من دخولك إلا بعد 60 يوم من تاريخ خروجك.</li>
+                    <li>5. السمعة الطيبة في الوظيفة وعدم وجود أي مخالفة وظيفية.</li>
+                    <li>6. مساعدة اللاعبين في روم #الاستفسار-والمساعدة.</li>
+                    <li>7. الرتبة المسموحة للوظائف العلمية (مستوى 6).</li>
+                    <li>8. الرتبة المسموحة للوظائف العسكرية (ملازم).</li>
+                    <li>9. أن تكون خبرة المتقدم 36 فما فوق.</li>
+                    <li>10. أن يكون المتقدم خالي من المخالفات أو السجلات الرقابية.</li>
+                    <li>11. يجب التقيد بالانتداب بشكل أسبوعي لجميع الوظائف، المدة المسموحة تبدأ من يوم إلى ٧ أيام.</li>
+                    <li>12. يمنع منعاً باتاً أثناء التقدم أو في حال امتلاك الاعتماد أن تكون لاعب معتمد أو من طاقم إداري في مدن أخرى.</li>
+                    <li>13. يحق لمسؤول اللاعب المعتمد إعفاء أي لاعب في حال خالف أي بند يخص اللاعب المعتمد.</li>
+                    <li>14. في حال تم إغلاق التذكرة يعتبر الطلب تحت المعالجة وفي حال عدم القبول يعني أنك لم تكمل أحد الشروط.</li>
+                </ul>
+
+                <h3>ملاحظات هامة</h3>
+                <ul class="rules-list">
+                    <li> يحق لإدارة الرقابة والتفتيش سحب الاعتماد بحال مخالفة قوانين المدينة أو مخالفة قوانين الوظائف المعتمدة.</li>
+                    <li> يجب عليك التدرج في رتب الوظيفة المنتدب إليها.</li>
+                    <li> يتم قبول ورفض الانتداب من قبل مسؤول اللاعب المعتمد.</li>
+                </ul>
+
+                <h3>شروط قبول اللاعب المعتمد حسب الرتب</h3>
+                <p>اللاعب المعتمد ينقسم إلى 3 رتب ولكل رتبة شروط وقوانين معينة:</p>
+
+                <div class="rank-box">
+                    <h4>1- رتبة [CP]</h4>
+                    <p>يشترط للتقديم على اللاعب المعتمد والحصول على رتبة [CP] أن تكون موظفاً حكومياً ويُعرف عنك بحسن التعامل والسلوك بين اللاعبين. ويبدأ التقديم بعد وصولك إلى إحدى الرتب التالية بالقطاعات:</p>
+                    <ul>
+                        <li>الشرطة: رتبة رقيب أول أو أعلى.</li>
+                        <li>أمن المنشآت: رتبة رقيب أول أو أعلى.</li>
+                        <li>الهلال الأحمر: مستوى 4 وأعلى.</li>
+                    </ul>
+                    <p>وبهذه الرتبة، يسمح لك بالتوظف ببقية القطاعات الحكومية والتنقل بينهم بعد طلب الإذن والسماح لك من قبل قائد قطاعك الأساسي وتوثيق الموافقة بالروم المخصص، ويجب أن يكون مرة واحدة على الأقل كل أسبوع.</p>
+                </div>
+
+                <div class="rank-box">
+                    <h4>2- رتبة [CR]</h4>
+                    <p>يتم الترشيح لهذه الرتبة من قبل الإدارة ومسؤول اللاعب المعتمد، والأولوية للستريمر وأصحاب السمعة الحسنة داخل المقاطعة.</p>
+                    <p>يعتبر حامل هذه الرتبة مشرفاً على اللاعبين المعتمدين الأحدث منه. يسمح لحامل هذه الرتبة بالتنقل بين القطاعات الحكومية بحرية أو حسب الاحتياج عند وجود نقص بالعدد وبدون إذن مسبق، لكن لا يمكنك أخذ رتبة مواطن إلا بعد أخذ إجازة رسمية من القائد أو النائب ويتم الموافقة عليها، ومن ثم تعتبر إجازة داخلية يومين إلى ثلاث.</p>
+                    <p style="color: #ff9800;">ملاحظة: استكمالك لجميع الشروط أعلاه لا يعني ضمان قبولك. يكون القبول بعد استيفاء جميع الشروط من قبل مسؤول اللاعب المعتمد والإدارة. كذلك توجد مميزات ومكافآت مجزية ونادرة من قبل الإدارة تُمنح ولا تُطلب. في حال يوجد نقص في قطاع إجباري تتوجه بأسرع وقت.</p>
+                </div>
+
+                <div class="rank-box">
+                    <h4>3- رتبة [CA]</h4>
+                    <p>يتم الترشيح لهذه الرتبة من قبل الإدارة ومسؤول اللاعب المعتمد، والأولوية للستريمر وأصحاب السمعة الحسنة داخل المقاطعة.</p>
+                    <p>يعتبر حامل هذه الرتبة مشرفاً على اللاعبين المعتمدين الأحدث منه. يسمح لحامل هذه الرتبة بالتنقل بين القطاعات الحكومية بحرية أو حسب الاحتياج عند وجود نقص بالعدد وبدون إذن مسبق.</p>
+                    <p style="color: #ff9800;">ملاحظة: استكمالك لجميع الشروط أعلاه لا يعني ضمان قبولك. يكون القبول بعد استيفاء جميع الشروط من قبل مسؤول اللاعب المعتمد والإدارة. كذلك توجد مميزات ومكافآت مجزية ونادرة من قبل الإدارة تُمنح ولا تُطلب.</p>
+                </div>
+
+            </div>
+        </div>
+    `));
+});
 
 app.listen(3000, () => console.log('Spark Web Updated!'));
