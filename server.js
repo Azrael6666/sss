@@ -177,6 +177,14 @@ app.get('/rules', (req, res) => {
             <div class="rule-card" onclick="openModal('crime-modal')">
                 <div class="icon-box" style="background-color: #f44336;"><i class="fa-solid fa-mask"></i></div>
                 <div>
+                    <h3 style="margin: 0; color: #fff;">المناطق الامنة </h3>
+                    <p style="color: #999; font-size: 14px; margin-top: 5px;">المناطق الممنوع فيها اطلاق نار والخطف</p>
+                </div>
+            </div>
+            
+            <div class="rule-card" onclick="openModal('crime-modal')">
+                <div class="icon-box" style="background-color: #f44336;"><i class="fa-solid fa-mask"></i></div>
+                <div>
                     <h3 style="margin: 0; color: #fff;">قوانين الإجرام</h3>
                     <p style="color: #999; font-size: 14px; margin-top: 5px;">الرهائن، السرقات، والاعتداءات</p>
                 </div>
