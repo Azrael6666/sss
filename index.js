@@ -197,7 +197,6 @@ app.get('/creators', (req, res) => res.send(layout(`<h1>صناع المحتوى<
 app.get('/jobs', (req, res) => res.send(layout(`<h1>الوظائف</h1><p>التقديم متاح عبر الديسكورد.</p>`)));
 app.get('/store', (req, res) => res.send(layout(`<h1>المتجر</h1><p>قريباً...</p>`)));
 
-app.listen(3000, () => console.log('Spark Web Running on port 3000'));const express = require('express');
 const app = express();
 
 const STYLES = `
