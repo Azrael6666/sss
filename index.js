@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 
+// نظام كاش بسيط لتسريع استجابة السيرفر ومنع التأخير
+app.use((req, res, next) => {
+    res.set('Cache-Control', 'public, max-age=300'); // كاش لمدة 5 دقائق
+    next();
+});
+
 const STYLES = `
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
-    
     * { box-sizing: border-box; scroll-behavior: smooth; }
     
     ::-webkit-scrollbar { width: 8px; }
@@ -86,6 +90,11 @@ const layout = (content) => `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مقاطعة سبارك</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     ${STYLES}
     <script>
