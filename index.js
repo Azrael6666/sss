@@ -120,7 +120,7 @@ app.get('/', (req, res) => {
         </section>
 
         <div style="background: rgba(20,20,20,0.8); padding: 40px; border-radius: 15px; max-width: 900px; margin: 40px auto; border: 1px solid rgba(212,175,55,0.2);">
-            <h2 style="color: #d4af37;">عن مقاطعة سبارك</h2>
+            <h2 style="color: #d4af37;">نبذة مقاطعة سبارك</h2>
             <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
         </div>
 
@@ -287,19 +287,6 @@ app.get('/rules', (req, res) => {
             </div>
         </div>
         <div id="robbery-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('robbery-modal')">&times;</span>
-                <h2>أعداد السرقات المسموحة</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>1. المستشفيات ومراكز الشرط ومراكز امن المنشأت.</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>2. معرض المركبات والشاحنات..</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>3. مركز التوظيف ومكان استخراج رخص.</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>4. حجز المركبات والشاحنات.</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>5. مناطق العمل (الاخشاب - الدواجن - الاعناب الخ...).</div>
-
-                </div>
-            </div>
-        </div>
 
         <div id="certified-modal" class="modal">
             <div class="modal-content">
