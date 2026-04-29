@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
 
     background-image:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.70)),
     url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png?ex=69f210e8&is=69f0bf68&hm=c9ccb7c9affa32eeeda0ddc317276a77e310bbe8fb86ac4223e4588cfa44eaad&');
 
     background-size: cover;
