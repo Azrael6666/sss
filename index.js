@@ -689,7 +689,7 @@ app.get('/jobs', (req, res) => {
         <h2 class="jobs-section-title">الوظائف العامة</h2>
 
         <div class="jobs-grid">
-            <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" class="job-card">
+            <a href="https://youtu.be/DZwpVsw9CIQ?si=W3owJHBiXYX3HWw2" target="_blank" class="job-card">
                 <div class="job-icon" style="background-color: #f1c40f;">
                     <i class="fa-solid fa-crow"></i>
                 </div>
