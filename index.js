@@ -798,7 +798,13 @@ app.get('/jobs', (req, res) => {
     <h3 class="job-title">الأقمشة</h3>
     <p class="job-desc">اضغط لمشاهدة شرح وظيفة الأقمشة</p>
 </a>
-
+<a href="https://youtu.be/VZhjKbtLnIo?si=BGIMQawOhjM02gye" target="_blank" class="job-card">
+    <div class="job-icon" style="background-color: #66BB6A;">
+        <i class="fa-solid fa-leaf"></i>
+    </div>
+    <h3 class="job-title">المراعي</h3>
+    <p class="job-desc">اضغط لمشاهدة شرح وظيفة المراعي</p>
+</a>
 </div>
     `));
 });
