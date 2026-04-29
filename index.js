@@ -130,6 +130,7 @@ const layout = (content) => `
 <a href="/creators">صناع المحتوى</a>
 <a href="/jobs">الوظائف</a>
 <a href="/store">المتجر</a>
+<a href="/admin-login">تسجيل دخول كأداري</a>
         </div>
     </nav>
     <div class="content-area">${content}</div>
@@ -797,4 +798,49 @@ app.get('/jobs', (req, res) => {
 });
 app.get('/store', (req, res) => res.send(layout(`<h1>المتجر</h1><p>قريباً...</p>`)));
 
+const adminEmails = [
+    "mx@gmail.com",
+    "admin2@gmail.com"
+];
+
+app.get('/admin-login', (req, res) => {
+    res.send(layout(`
+        <h1 style="color:#d4af37;">تسجيل دخول كأداري</h1>
+
+        <form action="/admin-check" method="GET" style="margin-top:30px;">
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="اكتب الإيميل"
+                required
+                style="padding:15px; width:300px; border-radius:8px; border:none; font-size:16px;"
+            >
+
+            <br><br>
+
+            <button 
+                type="submit"
+                class="btn-main btn-cfx-main"
+            >
+                دخول
+            </button>
+        </form>
+    `));
+});
+
+app.get('/admin-check', (req, res) => {
+    const email = req.query.email;
+
+    if (adminEmails.includes(email)) {
+        res.send(layout(`
+            <h1 style="color:#d4af37;">القائمة الإدارية</h1>
+            <p>مرحباً بك، تم التحقق من صلاحيتك.</p>
+        `));
+    } else {
+        res.send(layout(`
+            <h1 style="color:#ff4c4c;">غير مصرح</h1>
+            <p>هذا الإيميل غير موجود ضمن الإدارة.</p>
+        `));
+    }
+});
 module.exports = app;
