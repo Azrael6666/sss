@@ -165,7 +165,7 @@ app.get('/', (req, res) => {
 
     <div style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
 
-        <a href="https://www.tiktok.com/@sp10x1" target="_blank" style="
+        <a href="https://www.tiktok.com/@spark_0100?_r=1&_t=ZS-95wdUTYAP1r" target="_blank" style="
             background: rgba(20,20,20,0.85);
             border: 1px solid rgba(212,175,55,0.2);
             border-radius: 15px;
