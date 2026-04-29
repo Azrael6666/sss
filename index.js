@@ -704,6 +704,13 @@ app.get('/jobs', (req, res) => {
         <h3 class="job-title">المزارع</h3>
         <p class="job-desc">اضغط لمشاهدة شرح وظيفة المزارع</p>
     </a>
+<a href="https://youtu.be/NkR_7TgrTkY?si=4_Czqg2qZKqfmZMX" target="_blank" class="job-card">
+    <div class="job-icon" style="background-color: #8D6E63;">
+        <i class="fa-solid fa-tree"></i>
+    </div>
+    <h3 class="job-title">الأخشاب</h3>
+    <p class="job-desc">اضغط لمشاهدة شرح وظيفة الأخشاب</p>
+</a>
 </div>
     `));
 });
