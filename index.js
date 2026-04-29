@@ -754,7 +754,7 @@ app.get('/jobs', (req, res) => {
     <h3 class="job-title">لحوم الأبقار</h3>
     <p class="job-desc">اضغط لمشاهدة شرح وظيفة لحوم الأبقار</p>
 </a>
-</div>
+
 <a href="https://youtu.be/UUTpzys6OsE?si=V164lLTCrwGgNpfA" target="_blank" class="job-card">
     <div class="job-icon" style="background-color: #0288D1;">
         <i class="fa-solid fa-fish"></i>
