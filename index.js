@@ -694,7 +694,7 @@ app.get('/jobs', (req, res) => {
                     <i class="fa-solid fa-crow"></i>
                 </div>
                 <h3 class="job-title">الدواجن</h3>
-                <p class="job-desc">اضغط لمشاهدة شرح وظيفة الدواجن</p>
+                <p class="job-desc">اضغط لماشاهدة شرح وظيفة الدواجن</p>
             </a>
         </div>
     `));
