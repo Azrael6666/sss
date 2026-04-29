@@ -770,6 +770,13 @@ app.get('/jobs', (req, res) => {
     <h3 class="job-title">شركة النفط</h3>
     <p class="job-desc">اضغط لمشاهدة شرح وظيفة شركة النفط</p>
 </a>
+<a href="https://youtu.be/5-OB9lLYwYM?si=KRWdwPO4rv3fw2TB" target="_blank" class="job-card">
+    <div class="job-icon" style="background-color: #FFC107;">
+        <i class="fa-solid fa-jar"></i>
+    </div>
+    <h3 class="job-title">المناحل</h3>
+    <p class="job-desc">اضغط لمشاهدة شرح وظيفة المناحل</p>
+</a>
 </div>
     `));
 });
