@@ -741,7 +741,7 @@ app.get('/jobs', (req, res) => {
             <i class="fa-solid fa-crow"></i>
         </div>
         <h3 class="job-title">الدواجن</h3>
-        <p class="job-desc">اضغط لماشاهدة شرح وظيفة الدواجن</p>
+        <p class="job-desc">اضغط لمشاهدة شرح وظيفة الدواجن</p>
     </a>
 
     <a href="https://youtu.be/4SRBIhboAUE?si=kPrj9KYNeEgqtg2D" target="_blank" class="job-card">
@@ -821,7 +821,7 @@ app.get('/store', (req, res) => {
         
 
 
-<h2 style="color:#d4af37; margin-top:40px;">نبذات المتجر</h2>
+<h2 style="color:#d4af37; margin-top:40px;">نبذة عن المتجر</h2>
 
 <div class="cards-container">
 
