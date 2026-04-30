@@ -995,8 +995,8 @@ function makeSponsor(id, title, duration, money, xp, image) {
 
                 <div style="text-align:center; margin-bottom:25px;">
                     <img src="${image}" style="
-                        width:220px;
-                        border-radius:15px;
+                   width:400px;
+max-width:100%;
                         border:2px solid rgba(212,175,55,0.4);
                     ">
                 </div>
