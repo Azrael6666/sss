@@ -984,34 +984,29 @@ app.get('/store', (req, res) => {
 
 <h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
 
-<div class="cards-container">
+</div> <!-- cards-container -->
 
-    <div class="rule-card" onclick="openModal('sedan-modal')">
-        <div class="icon-box" style="background-color:#607D8B;">
-            <i class="fa-solid fa-car-side"></i>
-        </div>
-        <div>
-            <h3 style="margin:0; color:#fff;">سيدان</h3>
-            <p style="color:#999;">مركبات السيدان</p>
-        </div>
+<!-- مودال السيدان -->
+<div id="sedan-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
+        <h2>مركبات السيدان</h2>
     </div>
+</div>
 
-    <div class="rule-card" onclick="openModal('sport-modal')">
-        <div class="icon-box" style="background-color:#E53935;">
-            <i class="fa-solid fa-car"></i>
-        </div>
-        <div>
-            <h3 style="margin:0; color:#fff;">سبورت</h3>
-            <p style="color:#999;">مركبات السبورت</p>
-        </div>
+<!-- مودال السبورت -->
+<div id="sport-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('sport-modal')">&times;</span>
+        <h2>مركبات السبورت</h2>
     </div>
-<div class="rule-card" onclick="openModal('jeep-modal')">
-    <div class="icon-box" style="background-color:#4CAF50;">
-        <i class="fa-solid fa-car-on"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">جيب</h3>
-        <p style="color:#999;">مركبات الجيب</p>
+</div>
+
+<!-- مودال الجيب -->
+<div id="jeep-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('jeep-modal')">&times;</span>
+        <h2>مركبات الجيب</h2>
     </div>
 </div>
     <div class="rule-card" onclick="openModal('drift-modal')">
