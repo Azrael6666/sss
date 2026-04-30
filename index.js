@@ -984,113 +984,88 @@ app.get('/store', (req, res) => {
 
 <h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
 
-</div> <!-- cards-container -->
+<div class="cards-container">
 
+    <div class="rule-card" onclick="openModal('sedan-modal')">
+        <div class="icon-box" style="background-color:#607D8B;"><i class="fa-solid fa-car-side"></i></div>
+        <div><h3 style="margin:0;color:#fff;">سيدان</h3><p style="color:#999;">مركبات السيدان</p></div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('sport-modal')">
+        <div class="icon-box" style="background-color:#E53935;"><i class="fa-solid fa-car"></i></div>
+        <div><h3 style="margin:0;color:#fff;">سبورت</h3><p style="color:#999;">مركبات السبورت</p></div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('jeep-modal')">
+        <div class="icon-box" style="background-color:#4CAF50;"><i class="fa-solid fa-car-on"></i></div>
+        <div><h3 style="margin:0;color:#fff;">جيب</h3><p style="color:#999;">مركبات الجيب</p></div>
+    </div>
 
     <div class="rule-card" onclick="openModal('drift-modal')">
-        <div class="icon-box" style="background-color:#9C27B0;">
-            <i class="fa-solid fa-road"></i>
-        </div>
-        <div>
-            <h3 style="margin:0; color:#fff;">درفت</h3>
-            <p style="color:#999;">مركبات الدرفت</p>
-        </div>
+        <div class="icon-box" style="background-color:#9C27B0;"><i class="fa-solid fa-road"></i></div>
+        <div><h3 style="margin:0;color:#fff;">درفت</h3><p style="color:#999;">مركبات الدرفت</p></div>
     </div>
 
     <div class="rule-card" onclick="openModal('pickup-modal')">
-        <div class="icon-box" style="background-color:#795548;">
-            <i class="fa-solid fa-truck-pickup"></i>
-        </div>
-        <div>
-            <h3 style="margin:0; color:#fff;">بيك أب</h3>
-            <p style="color:#999;">مركبات البيك أب</p>
-        </div>
+        <div class="icon-box" style="background-color:#795548;"><i class="fa-solid fa-truck-pickup"></i></div>
+        <div><h3 style="margin:0;color:#fff;">بيك أب</h3><p style="color:#999;">مركبات البيك أب</p></div>
     </div>
 
     <div class="rule-card" onclick="openModal('truck-modal')">
-        <div class="icon-box" style="background-color:#FF9800;">
-            <i class="fa-solid fa-truck"></i>
-        </div>
-        <div>
-            <h3 style="margin:0; color:#fff;">حمولات</h3>
-            <p style="color:#999;">مركبات الحمولات</p>
-        </div>
+        <div class="icon-box" style="background-color:#FF9800;"><i class="fa-solid fa-truck"></i></div>
+        <div><h3 style="margin:0;color:#fff;">حمولات</h3><p style="color:#999;">مركبات الحمولات</p></div>
     </div>
 
- <div class="rule-card" onclick="openModal('government-modal')">
-    <div class="icon-box" style="background-color:#3F51B5;">
-        <i class="fa-solid fa-building"></i>
+    <div class="rule-card" onclick="openModal('government-modal')">
+        <div class="icon-box" style="background-color:#3F51B5;"><i class="fa-solid fa-building"></i></div>
+        <div><h3 style="margin:0;color:#fff;">مركبات حكومية</h3><p style="color:#999;">مركبات الجهات الحكومية</p></div>
     </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">مركبات حكومية</h3>
-        <p style="color:#999;">مركبات الجهات الحكومية</p>
-    </div>
+
 </div>
-</div> <!-- cards-container -->
 
-
-<!-- بعدها تبدأ المودالات -->
 <div id="sedan-modal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
-
         <h2>مركبات السيدان</h2>
-
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
-            <img src="https://e.top4top.io/p_3770z77kn2.png  ">
-            <img src="https://c.top4top.io/p_3770snz7x3.png ">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;">
+            <img src="https://e.top4top.io/p_3770z77kn2.png" style="width:300px;border-radius:15px;">
+            <img src="https://c.top4top.io/p_3770snz7x3.png" style="width:300px;border-radius:15px;">
         </div>
-
-        <div class="note-box" style="margin-top:35px;">
-            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
-        </div>
+        <div class="note-box" style="margin-top:35px;">للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.</div>
+    </div>
 </div>
-</div> <!-- نهاية sedan-modal -->
 
 <div id="sport-modal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('sport-modal')">&times;</span>
-
         <h2>مركبات السبورت</h2>
-
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
-
-            <img src="" style="width:300px; border-radius:15px;">
-            <img src="" style="width:300px; border-radius:15px;">
-            <img src="" style="width:300px; border-radius:15px;">
-            <img src="" style="width:300px; border-radius:15px;">
-            <img src="" style="width:300px; border-radius:15px;">
-            <img src="" style="width:300px; border-radius:15px;">
-            <img src="رابط_الصورة7" style="width:300px; border-radius:15px;">
-            <img src="رابط_الصورة8" style="width:300px; border-radius:15px;">
-
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;">
+            <img src="" style="width:300px;border-radius:15px;">
+            <img src="" style="width:300px;border-radius:15px;">
+            <img src="" style="width:300px;border-radius:15px;">
+            <img src="" style="width:300px;border-radius:15px;">
+            <img src="" style="width:300px;border-radius:15px;">
+            <img src="" style="width:300px;border-radius:15px;">
+            <img src="" style="width:300px;border-radius:15px;">
+            <img src="" style="width:300px;border-radius:15px;">
         </div>
-
-        <div class="note-box" style="margin-top:35px;">
-            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
-        </div>
-    </div>
-    <div id="jeep-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('jeep-modal')">&times;</span>
-
-        <h2>مركبات الجيب</h2>
-
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
-
-            <img src="رابط_الصورة1" style="width:300px; border-radius:15px;">
-            <img src="رابط_الصورة2" style="width:300px; border-radius:15px;">
-            <img src="رابط_الصورة3" style="width:300px; border-radius:15px;">
-            <img src="رابط_الصورة4" style="width:300px; border-radius:15px;">
-            <img src="رابط_الصورة5" style="width:300px; border-radius:15px;">
-
-        </div>
-
-        <div class="note-box" style="margin-top:35px;">
-            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
-        </div>
+        <div class="note-box" style="margin-top:35px;">للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.</div>
     </div>
 </div>
+
+<div id="jeep-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('jeep-modal')">&times;</span>
+        <h2>مركبات الجيب</h2>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;">
+            <img src="رابط_الصورة1" style="width:300px;border-radius:15px;">
+            <img src="رابط_الصورة2" style="width:300px;border-radius:15px;">
+            <img src="رابط_الصورة3" style="width:300px;border-radius:15px;">
+            <img src="رابط_الصورة4" style="width:300px;border-radius:15px;">
+            <img src="رابط_الصورة5" style="width:300px;border-radius:15px;">
+        </div>
+        <div class="note-box" style="margin-top:35px;">للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.</div>
+    </div>
 </div>
         <div id="sponsor-modal" class="modal">
     <div class="modal-content">
