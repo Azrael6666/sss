@@ -993,12 +993,11 @@ app.get('/store', (req, res) => {
         <div>
             <h3 style="margin:0; color:#fff;">سيدان</h3>
             <p style="color:#999;">مركبات السيدان</p>
-
-
-
+        </div>
     </div>
+
 </div>
- 
+
 <div id="sedan-modal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
@@ -1006,25 +1005,13 @@ app.get('/store', (req, res) => {
         <h2>مركبات السيدان</h2>
 
         <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
-
-            <img src="https://d.top4top.io/p_37703mby38.png"
-            style="width:350px; border-radius:15px;">
-
-            <img src="https://e.top4top.io/p_3770z77kn2.png"
-            style="width:350px; border-radius:15px;">
-
+            <img src="https://d.top4top.io/p_37703mby38.png" style="width:350px; border-radius:15px;">
+            <img src="https://e.top4top.io/p_3770z77kn2.png" style="width:350px; border-radius:15px;">
         </div>
-    </div>
+
         <div class="note-box" style="margin-top:35px;">
             للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
         </div>
-
-        <div style="text-align:center; margin-top:20px;">
-            <a href="https://discord.gg/sp10" class="btn-main btn-discord">
-                فتح تذكرة متجر
-            </a>
-        </div>
-
     </div>
 </div>
 
