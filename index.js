@@ -916,7 +916,7 @@ app.get('/store', (req, res) => {
                 </div>
             </div>
 <div class="rule-card" onclick="openModal('strategic-modal')">
-    ...
+
 </div>
 
 </div>
