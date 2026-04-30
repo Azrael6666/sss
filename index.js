@@ -1063,6 +1063,31 @@ app.get('/store', (req, res) => {
         <div class="note-box" style="margin-top:35px;">
             للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
         </div>
+</div>
+</div> <!-- نهاية sedan-modal -->
+
+<div id="sport-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('sport-modal')">&times;</span>
+
+        <h2>مركبات السبورت</h2>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+
+            <img src="https://a.top4top.io/p_3770qbt316.png" style="width:300px; border-radius:15px;">
+            <img src="https://b.top4top.io/p_3770umjun1.png" style="width:300px; border-radius:15px;">
+            <img src="https://a.top4top.io/p_3770d0xeb1.png " style="width:300px; border-radius:15px;">
+            <img src="https://d.top4top.io/p_3770td9kw1.png" style="width:300px; border-radius:15px;">
+            <img src="https://d.top4top.io/p_3770td9kw1.png" style="width:300px; border-radius:15px;">
+            <img src="https://d.top4top.io/p_37703mby38.png" style="width:300px; border-radius:15px;">
+            <img src="رابط_الصورة7" style="width:300px; border-radius:15px;">
+            <img src="رابط_الصورة8" style="width:300px; border-radius:15px;">
+
+        </div>
+
+        <div class="note-box" style="margin-top:35px;">
+            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
+        </div>
     </div>
 </div>
         <div id="sponsor-modal" class="modal">
