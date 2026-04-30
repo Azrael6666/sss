@@ -564,9 +564,13 @@ app.get('/creators', (req, res) => {
             </div>
 
             <div class="rule-card" onclick="openModal('creator-conditions-modal')">
-                <div class="icon-box" style="background-color:#4CAF50;">
-                    <i class="fa-solid fa-list-check"></i>
-                </div>
+             <div class="icon-box" style="
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-size:cover;
+    background-position:center;
+    background-color:transparent;
+">
+</div>
                 <div>
                     <h3 style="margin:0; color:#fff;">شروط صناع المحتوى</h3>
                     <p style="color:#999; font-size:14px;">شروط القبول والتقديم</p>
