@@ -921,7 +921,6 @@ app.get('/store', (req, res) => {
 
 </div>
 
-<!-- هنا الصق قسم ضعف الخبرة -->
 
 <h2 style="color:#d4af37; margin-top:70px;">قسم ضعف الخبرة</h2>
 
@@ -933,7 +932,7 @@ app.get('/store', (req, res) => {
         </div>
         <div>
             <h3 style="margin:0; color:#fff;">ضعف خبرة 6 ساعات</h3>
-            <p style="color:#999;">تفاصيل العرض</p>
+            <p style="color:#999;">تفاصيل العرض في الديسكورد</p>
         </div>
     </div>
 
@@ -943,7 +942,7 @@ app.get('/store', (req, res) => {
         </div>
         <div>
             <h3 style="margin:0; color:#fff;">ضعف خبرة 12 ساعة</h3>
-            <p style="color:#999;">تفاصيل العرض</p>
+            <p style="color:#999;">تفاصيل العرض في الديسكورد </p>
         </div>
     </div>
 
@@ -953,7 +952,7 @@ app.get('/store', (req, res) => {
         </div>
         <div>
             <h3 style="margin:0; color:#fff;">ضعف خبرة 24 ساعة</h3>
-            <p style="color:#999;">تفاصيل العرض</p>
+            <p style="color:#999;">تفاصيل العرض في الديسكورد</p>
         </div>
     </div>
 
