@@ -814,28 +814,24 @@ app.get('/store', (req, res) => {
         <p style="color:#aaa; margin-bottom:40px;">
             استعرض المنتجات والمميزات الخاصة داخل السيرفر
         </p>
+        
 
-        <div class="cards-container">
 
-            <div class="rule-card" onclick="openModal('sponsor-modal')">
-                <div class="icon-box" style="background-color:#d4af37;">
-                    <i class="fa-solid fa-crown"></i>
-                </div>
-                <div>
-                    <h3 style="margin:0; color:#fff;">نبذة عن الراعي الرسمي</h3>
-                    <p style="color:#999;">مميزات بطاقة الراعي</p>
-                </div>
-            </div>
+<h2 style="color:#d4af37; margin-top:40px;">نبذات المتجر</h2>
 
-            <div class="rule-card" onclick="openModal('xp-modal')">
-                <div class="icon-box" style="background-color:#4CAF50;">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <div>
-                    <h3 style="margin:0; color:#fff;">نبذة عن ضعف الخبرة</h3>
-                    <p style="color:#999;">مضاعفة الخبرة داخل السيرفر</p>
-                </div>
-            </div>
+<div class="cards-container">
+
+<div class="rule-card" onclick="openModal('sponsor-modal')">
+</div>
+
+<div class="rule-card" onclick="openModal('xp-modal')">
+</div>
+
+</div>
+
+<h2 style="color:#d4af37; margin-top:70px;">قسم الرعاة</h2>
+
+<div class="cards-container">
 
             <div class="rule-card" onclick="openModal('bronze-modal')">
                 <div class="icon-box" style="background-color:#cd7f32;">
