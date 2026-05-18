@@ -419,17 +419,19 @@ app.get('/rules', (req, res) => {
                 <span class="close-btn" onclick="closeModal('robbery-modal')">&times;</span>
                 <h2>أعداد السرقات المسموحة</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>البنك المركزي:</strong><br>المجرمين: 4 - 6 | الأمن الأقصى: 10</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك بليتو & ساندي:</strong><br>المجرمين: 3 - 5 | الأمن الأقصى: 7</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك ميز:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: 7</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>البنك المركزي:</strong><br>المجرمين: 4 - 6 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك بليتو & ساندي:</strong><br>المجرمين: 3 - 5 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك ميز:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك ميز المركزي:</strong><br>المجرمين: 4 - 7 | الأمن الأقصى: 11</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك ليبرتي:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: 8</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>الكازينو:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: 7</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>المتاجر:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: 4</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>متجر الاسلحة:</strong><br>المجرمين: 2 - 3 | الأمن الأقصى: 4</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>البار:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: 4</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>معرض الفنون:</strong><br>المجرمين: 3 - 5 | الأمن الأقصى: 8</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة المجوهرات:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: 6</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك ليبرتي:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>الكازينو:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>المتاجر:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: +<2/div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>متجر الاسلحة:</strong><br>المجرمين: 2 - 3 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>البار:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>معرض الفنون:</strong><br>المجرمين: 3 - 5 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة المجوهرات:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة المجوهرات:</strong><br>بنك الاتحاد : 4-6 مجرمين| الأمن الأقصى: +2</div>
+
                 </div>
             </div>
         </div>
