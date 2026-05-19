@@ -430,8 +430,13 @@ app.get('/rules', (req, res) => {
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>البار:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: +2 </div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>معرض الفنون:</strong><br>المجرمين: 3 - 5 | الأمن الأقصى: +2</div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة المجوهرات:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك الاتحاد :</strong><br>4-6 مجرمين  | الأمن الأقصى: +2</div>
-
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك الاتحاد :</strong><br> 4 - 6 مجرمين  | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة الكهرباء:</strong><br>المجرمين: 4 - 6 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة عصابة ذا لوست :</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة المتحف :</strong><br>المجرمين: 3 - 5 | الأمن الأقصى: +2</div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة برج المراقبة :</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
+                   <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة الدواجن :</strong><br>المجرمين: 3 - 6 | الأمن الأقصى: +2</div>
+                   <div class="highlight-box" style="margin-bottom: 0;"><strong>سرقة المختبرات :</strong><br>المجرمين: 6 - 12| الأمن الأقصى: +4</div>
                 </div>
             </div>
         </div>
