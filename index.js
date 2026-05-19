@@ -425,7 +425,7 @@ app.get('/rules', (req, res) => {
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك ميز المركزي:</strong><br>المجرمين: 4 - 7 | الأمن الأقصى:  +2 </div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>بنك ليبرتي:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2</div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>الكازينو:</strong><br>المجرمين: 2 - 4 | الأمن الأقصى: +2 </div>
-                    <div class="highlight-box" style="margin-bottom: 0;"><strong>المتاجر:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: +<2 </div>
+                    <div class="highlight-box" style="margin-bottom: 0;"><strong>المتاجر:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: +2 </div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>متجر الاسلحة:</strong><br>المجرمين: 2 - 3 | الأمن الأقصى: +2 </div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>البار:</strong><br>المجرمين: 1 - 3 | الأمن الأقصى: +2 </div>
                     <div class="highlight-box" style="margin-bottom: 0;"><strong>معرض الفنون:</strong><br>المجرمين: 3 - 5 | الأمن الأقصى: +2</div>
